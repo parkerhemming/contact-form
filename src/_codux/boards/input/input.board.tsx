@@ -3,5 +3,8 @@ import { Input } from '../../../components/input/input';
 
 export default createBoard({
     name: 'Input',
-    Board: () => <Input />
+    Board: () => <Input />,
+    environmentProps: {
+        canvasWidth: 155,
+    },
 });
