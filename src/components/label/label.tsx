@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export interface LabelProps {
     className?: string;
-    children?: JSX.Element | Array<JSX.Element|string> | string;
+    children?: JSX.Element | Array<JSX.Element | string> | string;
     htmlFor?: string;
 }
 
@@ -12,7 +12,11 @@ export interface LabelProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-labels-and-templates
  */
 export const Label = ({ className, children, htmlFor }: LabelProps) => {
-    return <div className={`${styles.root} ${className}`}>
-        <label htmlFor={htmlFor}>{ children }</label>
-    </div>
+    return (
+        <div className={`${styles.root} ${className}`}>
+            <label htmlFor={htmlFor} className={styles.label}>
+                {children}
+            </label>
+        </div>
+    );
 };
